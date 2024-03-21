@@ -1,10 +1,18 @@
 import 'package:diary/common/utils/config.dart';
+import 'package:diary/todo/components/month_calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // NOTE: intl
+  // findSystemLocale().then((locale) {
+  //   Intl.systemLocale = locale;
+  // });
+
+  // await initializeDateFormatting(Intl.systemLocale, 'https://google.com');
+
   // NOTE: dotenv
   await dotenv.load(fileName: '.env');
 
@@ -34,8 +42,11 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             title: const Text('Diary'),
           ),
-          body: const Center(
-            child: Text("hi"),
+          body: Center(
+            child: MonthCalendar(
+              width: MediaQuery.of(context).size.width * 0.9,
+              height: MediaQuery.of(context).size.height,
+            ),
           ),
         );
       },
