@@ -1,9 +1,19 @@
+import 'package:diary/common/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // NOTE: dotenv
   await dotenv.load(fileName: '.env');
+
+  // NOTE: supabase
+  await Supabase.initialize(
+    url: Config.API_URL,
+    anonKey: Config.API_KEY,
+  );
+
   runApp(const MyApp());
 }
 
@@ -15,11 +25,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String foo = dotenv.get('SUPABASE_API_URL');
-
   @override
   Widget build(BuildContext context) {
-    print(foo);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       builder: (BuildContext context, Widget? child) {

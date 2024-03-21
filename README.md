@@ -1,16 +1,12 @@
 # diary
 
-A new Flutter project.
+## Tech Stack
 
-## Getting Started
+- Language: [Dart](https://dart.dev/)
+- Framework: [Flutter](https://flutter.dev/)
+- State Management: [Riverpod](https://riverpod.dev/)
+- BE: [Supabase](https://supabase.com/)
 
-This project is a starting point for a Flutter application.
+### `[WIP]` DB
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[DBDiagram](https://dbdiagram.io/d/65fc18ccae072629ce9b9b0b)
