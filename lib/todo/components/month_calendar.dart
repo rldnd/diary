@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class MonthCalendar extends StatefulWidget {
@@ -25,7 +26,7 @@ class _MonthCalendarState extends State<MonthCalendar> {
       height: widget.height,
       child: TableCalendar(
         calendarFormat: format,
-        // locale: Intl.systemLocale,
+        locale: Intl.systemLocale,
         focusedDay: DateTime.now(),
         firstDay: DateTime(2023, 1, 1),
         lastDay: DateTime(2024, 12, 31),

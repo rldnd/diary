@@ -2,16 +2,19 @@ import 'package:diary/common/utils/config.dart';
 import 'package:diary/todo/components/month_calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/find_locale.dart';
+import 'package:intl/intl.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // NOTE: intl
-  // findSystemLocale().then((locale) {
-  //   Intl.systemLocale = locale;
-  // });
+  findSystemLocale().then((locale) {
+    Intl.systemLocale = locale;
+  });
 
-  // await initializeDateFormatting(Intl.systemLocale, 'https://google.com');
+  await initializeDateFormatting();
 
   // NOTE: dotenv
   await dotenv.load(fileName: '.env');
