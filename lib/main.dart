@@ -1,10 +1,8 @@
-import 'package:diary/calendar/view/calendar_screen.dart';
+import 'package:diary/common/providers/route_provider.dart';
 import 'package:diary/common/utils/config.dart';
-import 'package:diary/common/view/root_tab_screen.dart';
-import 'package:diary/common/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/find_locale.dart';
 import 'package:intl/intl.dart';
@@ -28,32 +26,17 @@ Future<void> main() async {
     anonKey: Config.API_KEY,
   );
 
-  runApp(const _App());
+  runApp(const ProviderScope(child: _App()));
 }
 
-// TODO: migarate
-final router = GoRouter(
-  initialLocation: '/splash',
-  routes: [
-    GoRoute(
-      path: '/splash',
-      builder: (context, state) => const SplashScreen(),
-    ),
-    GoRoute(
-      path: '/',
-      builder: (context, state) => const RootTabScreen(),
-    ),
-  ],
-);
-
-class _App extends StatelessWidget {
+class _App extends ConsumerWidget {
   const _App({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routerConfig: router,
+      routerConfig: ref.watch(routerProvider),
     );
   }
 }
