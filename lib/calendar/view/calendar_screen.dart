@@ -1,4 +1,5 @@
 import 'package:diary/calendar/components/month_calendar.dart';
+import 'package:diary/common/components/default_layout.dart';
 import 'package:flutter/material.dart';
 
 class CalendarScreen extends StatefulWidget {
@@ -13,21 +14,14 @@ class CalendarScreen extends StatefulWidget {
 class _CalendarScreenState extends State<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      builder: (BuildContext context, Widget? child) {
-        return Scaffold(
-          appBar: AppBar(
-            title: const Text('Diary'),
-          ),
-          body: Center(
-            child: MonthCalendar(
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.height,
-            ),
-          ),
-        );
-      },
+    return DefaultLayout(
+      title: 'Diary',
+      body: Center(
+        child: MonthCalendar(
+          width: MediaQuery.of(context).size.width * 0.9,
+          height: MediaQuery.of(context).size.height,
+        ),
+      ),
     );
   }
 }

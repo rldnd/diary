@@ -1,5 +1,6 @@
 import 'package:diary/calendar/view/calendar_screen.dart';
 import 'package:diary/common/utils/config.dart';
+import 'package:diary/common/view/root_tab_screen.dart';
 import 'package:diary/common/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -36,13 +37,11 @@ final router = GoRouter(
   routes: [
     GoRoute(
       path: '/splash',
-      name: SplashScreen.routeName,
       builder: (context, state) => const SplashScreen(),
     ),
     GoRoute(
       path: '/',
-      name: CalendarScreen.routeName,
-      builder: (context, state) => const CalendarScreen(),
+      builder: (context, state) => const RootTabScreen(),
     ),
   ],
 );
