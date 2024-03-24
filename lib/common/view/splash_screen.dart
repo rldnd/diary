@@ -4,8 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
-  static String get routeName => 'splashScreen';
-
   const SplashScreen({super.key});
 
   @override
@@ -20,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
         useImmersiveMode: true,
         asyncNavigationCallback: () async {
           await Future.delayed(const Duration(seconds: 3));
-          context.go('/');
+          context.go('/today');
         },
         backgroundColor: Colors.white,
         splashScreenBody: Center(
