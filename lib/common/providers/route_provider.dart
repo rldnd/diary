@@ -1,7 +1,7 @@
 import 'package:diary/calendar/view/calendar_screen.dart';
 import 'package:diary/common/view/scaffold_with_nav.dart';
 import 'package:diary/common/view/splash_screen.dart';
-import 'package:diary/profile/view/profile_screen.dart';
+import 'package:diary/user/view/profile_screen.dart';
 import 'package:diary/search/view/search_screen.dart';
 import 'package:diary/today/view/today_screen.dart';
 import 'package:flutter/material.dart';
