@@ -15,19 +15,15 @@ class DefaultLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return Scaffold(
-          appBar: title != null
-              ? AppBar(
-                  centerTitle: true,
-                  title: Text(title!),
-                )
-              : null,
-          body: body,
-          bottomNavigationBar: bottomNavigation,
-        );
-      },
+    return Scaffold(
+      appBar: title != null
+          ? AppBar(
+              centerTitle: true,
+              title: Text(title!),
+            )
+          : null,
+      body: body,
+      bottomNavigationBar: bottomNavigation,
     );
   }
 }

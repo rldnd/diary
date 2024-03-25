@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/find_locale.dart';
 import 'package:intl/intl.dart';
+import 'package:sizer/sizer.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
@@ -36,9 +37,13 @@ class _App extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(routerProvider);
 
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: router,
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          routerConfig: router,
+        );
+      },
     );
   }
 }

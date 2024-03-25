@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoginedProfileSection extends StatelessWidget {
-  const LoginedProfileSection({super.key});
+class ProfileSection extends StatelessWidget {
+  const ProfileSection({super.key});
 
   @override
   Widget build(BuildContext context) {

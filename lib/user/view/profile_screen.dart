@@ -1,5 +1,5 @@
 import 'package:diary/common/components/default_layout.dart';
-import 'package:diary/user/components/logined_profile_section.dart';
+import 'package:diary/user/components/profile_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,7 +19,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
         physics: BouncingScrollPhysics(),
         child: Column(
           children: [
-            LoginedProfileSection(),
+            ProfileSection(),
           ],
         ),
       ),
