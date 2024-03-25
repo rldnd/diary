@@ -11,7 +11,6 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'route_provider.g.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
-final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 @Riverpod(keepAlive: true)
 GoRouter router(RouterRef ref) {
@@ -23,45 +22,59 @@ GoRouter router(RouterRef ref) {
         path: '/splash',
         builder: (context, state) => const SplashScreen(),
       ),
-      ShellRoute(
+      StatefulShellRoute.indexedStack(
         parentNavigatorKey: _rootNavigatorKey,
-        navigatorKey: _shellNavigatorKey,
-        routes: [
-          GoRoute(
-            path: '/today',
-            pageBuilder: (context, state) => const NoTransitionPage(
-              child: TodayScreen(),
-            ),
-          ),
-          GoRoute(
-            path: '/calendar',
-            pageBuilder: (context, state) => const NoTransitionPage(
-              child: CalendarScreen(),
-            ),
-          ),
-          GoRoute(
-            path: '/search',
-            pageBuilder: (context, state) => const NoTransitionPage(
-              child: SearchScreen(),
-            ),
+        builder: (context, state, navigationShell) => ScaffoldWithNav(
+          navigationShell: navigationShell,
+        ),
+        branches: <StatefulShellBranch>[
+          StatefulShellBranch(
             routes: [
               GoRoute(
-                path: 'calendar',
-                parentNavigatorKey: _rootNavigatorKey,
-                builder: (context, state) => const CalendarScreen(),
-              )
+                path: '/today',
+                pageBuilder: (context, state) => const NoTransitionPage(
+                  child: TodayScreen(),
+                ),
+              ),
             ],
           ),
-          GoRoute(
-            path: '/profile',
-            pageBuilder: (context, state) => const NoTransitionPage(
-              child: ProfileScreen(),
-            ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: '/calendar',
+                pageBuilder: (context, state) => const NoTransitionPage(
+                  child: CalendarScreen(),
+                ),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: '/search',
+                pageBuilder: (context, state) => const NoTransitionPage(
+                  child: SearchScreen(),
+                ),
+                routes: [
+                  GoRoute(
+                    path: 'calendar',
+                    builder: (context, state) => const CalendarScreen(),
+                  )
+                ],
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: '/profile',
+                pageBuilder: (context, state) => const NoTransitionPage(
+                  child: ProfileScreen(),
+                ),
+              ),
+            ],
           ),
         ],
-        builder: (context, state, child) {
-          return ScaffoldWithNav(child: child);
-        },
       ),
     ],
   );

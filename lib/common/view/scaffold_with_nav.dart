@@ -10,30 +10,33 @@ const Map<int, String> NAV_INDEX_ENDPOINT_MAPPER = {
 };
 
 class ScaffoldWithNav extends StatefulWidget {
-  final Widget child;
-  const ScaffoldWithNav({super.key, required this.child});
+  final StatefulNavigationShell navigationShell;
+  const ScaffoldWithNav({super.key, required this.navigationShell});
 
   @override
   State<ScaffoldWithNav> createState() => _ScaffoldWithNavState();
 }
 
 class _ScaffoldWithNavState extends State<ScaffoldWithNav> {
-  late int currentIndex;
+  int currentIndex = 0;
 
   void onTapBottomNavigation(int index) {
-    context.go(NAV_INDEX_ENDPOINT_MAPPER[index]!);
-    setState(() => currentIndex = index);
+    final hasAlreadyOnBranch = index == widget.navigationShell.currentIndex;
+    if (hasAlreadyOnBranch) {
+      context.go(NAV_INDEX_ENDPOINT_MAPPER[index]!);
+    } else {
+      widget.navigationShell.goBranch(index);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final initialIndex = initNavigationIndex(context);
-    setState(() => currentIndex = initialIndex);
+    _initNavigationIndex(context);
 
     return DefaultLayout(
-      body: widget.child,
+      body: widget.navigationShell,
       bottomNavigation: BottomNavigationBar(
-        currentIndex: currentIndex,
+        currentIndex: currentIndex ?? 0,
         selectedFontSize: 10.0,
         unselectedFontSize: 10.0,
         type: BottomNavigationBarType.fixed,
@@ -61,15 +64,15 @@ class _ScaffoldWithNavState extends State<ScaffoldWithNav> {
       ),
     );
   }
-}
 
-int initNavigationIndex(BuildContext context) {
-  final routerState = GoRouterState.of(context);
-  late int _index;
-  for (final entry in NAV_INDEX_ENDPOINT_MAPPER.entries) {
-    if (routerState.fullPath!.startsWith(entry.value)) {
-      _index = entry.key;
+  void _initNavigationIndex(BuildContext context) {
+    final routerState = GoRouterState.of(context);
+    late int index;
+    for (final entry in NAV_INDEX_ENDPOINT_MAPPER.entries) {
+      if (routerState.fullPath!.startsWith(entry.value)) {
+        index = entry.key;
+      }
     }
+    setState(() => currentIndex = index);
   }
-  return _index;
 }
