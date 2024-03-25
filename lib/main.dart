@@ -1,5 +1,5 @@
-import 'package:diary/common/providers/route_provider.dart';
 import 'package:diary/common/config.dart';
+import 'package:diary/common/providers/route_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -1,4 +1,5 @@
-import 'package:diary/user/repositories/user_repository.dart';
+import 'package:diary/common/components/default_layout.dart';
+import 'package:diary/user/components/logined_profile_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -12,28 +13,16 @@ class ProfileScreen extends ConsumerStatefulWidget {
 class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: ref.read(userRepositoryProvider).getUsers(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return const CircularProgressIndicator();
-        }
-        return Container(
-          child: SafeArea(
-            child: Center(
-              child: Column(
-                children: [
-                  Text('data: ${snapshot.data.toString()}'),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text('add user'),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
-      },
+    return const DefaultLayout(
+      title: '프로필',
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            LoginedProfileSection(),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -1,5 +1,5 @@
+import 'package:diary/common/components/default_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -11,10 +11,10 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-        child: const Text('go to Calendar Screen'),
-        onPressed: () => context.go('/search/calendar'),
+    return const DefaultLayout(
+      title: '검색',
+      body: Center(
+        child: Text("Search Screen"),
       ),
     );
   }

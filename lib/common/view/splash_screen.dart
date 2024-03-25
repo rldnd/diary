@@ -18,6 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
         useImmersiveMode: true,
         asyncNavigationCallback: () async {
           await Future.delayed(const Duration(seconds: 3));
+          if (!context.mounted) return;
           context.go('/calendar');
         },
         backgroundColor: Colors.white,

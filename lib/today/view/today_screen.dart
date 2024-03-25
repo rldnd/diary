@@ -12,7 +12,7 @@ class _TodayScreenState extends State<TodayScreen> {
   @override
   Widget build(BuildContext context) {
     return const DefaultLayout(
-      title: 'Today',
+      title: '오늘',
       body: Center(
         child: Text(''),
       ),

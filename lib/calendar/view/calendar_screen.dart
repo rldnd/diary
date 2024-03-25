@@ -3,8 +3,6 @@ import 'package:diary/common/components/default_layout.dart';
 import 'package:flutter/material.dart';
 
 class CalendarScreen extends StatefulWidget {
-  static String get routeName => 'calendarScreen';
-
   const CalendarScreen({super.key});
 
   @override
@@ -15,10 +13,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
-      title: 'Diary',
+      title: '{}월',
       body: Center(
         child: MonthCalendar(
-          width: MediaQuery.of(context).size.width * 0.9,
+          width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
         ),
       ),
