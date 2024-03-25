@@ -13,7 +13,6 @@ part 'route_provider.g.dart';
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
-// TODO: Shell Router
 @Riverpod(keepAlive: true)
 GoRouter router(RouterRef ref) {
   return GoRouter(
@@ -30,15 +29,21 @@ GoRouter router(RouterRef ref) {
         routes: [
           GoRoute(
             path: '/today',
-            builder: (context, state) => const TodayScreen(),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: TodayScreen(),
+            ),
           ),
           GoRoute(
             path: '/calendar',
-            builder: (context, state) => const CalendarScreen(),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: CalendarScreen(),
+            ),
           ),
           GoRoute(
             path: '/search',
-            builder: (context, state) => const SearchScreen(),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: SearchScreen(),
+            ),
             routes: [
               GoRoute(
                 path: 'calendar',
@@ -49,7 +54,9 @@ GoRouter router(RouterRef ref) {
           ),
           GoRoute(
             path: '/profile',
-            builder: (context, state) => const ProfileScreen(),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: ProfileScreen(),
+            ),
           ),
         ],
         builder: (context, state, child) {

@@ -1,5 +1,5 @@
 import 'package:diary/common/providers/route_provider.dart';
-import 'package:diary/common/utils/config.dart';
+import 'package:diary/common/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -30,7 +30,7 @@ Future<void> main() async {
 }
 
 class _App extends ConsumerWidget {
-  const _App({Key? key}) : super(key: key);
+  const _App({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
