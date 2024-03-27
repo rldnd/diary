@@ -36,7 +36,7 @@ class _ScaffoldWithNavState extends State<ScaffoldWithNav> {
     return DefaultLayout(
       body: widget.navigationShell,
       bottomNavigation: BottomNavigationBar(
-        currentIndex: currentIndex ?? 0,
+        currentIndex: currentIndex,
         selectedFontSize: 10.0,
         unselectedFontSize: 10.0,
         type: BottomNavigationBarType.fixed,

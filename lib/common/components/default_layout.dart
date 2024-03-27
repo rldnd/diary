@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 class DefaultLayout extends StatelessWidget {
   final String? title;
