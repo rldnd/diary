@@ -1,7 +1,6 @@
 import 'package:diary/common/components/default_layout.dart';
 import 'package:diary/common/providers/supabase_provider.dart';
 import 'package:diary/user/components/kakao_login_button.dart';
-import 'package:diary/user/providers/user_me_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';

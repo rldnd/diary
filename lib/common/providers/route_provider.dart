@@ -1,3 +1,4 @@
+import 'package:diary/auth/providers/auth_provider.dart';
 import 'package:diary/calendar/view/calendar_screen.dart';
 import 'package:diary/common/view/scaffold_with_nav.dart';
 import 'package:diary/common/view/splash_screen.dart';
@@ -15,9 +16,13 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
 @Riverpod(keepAlive: true)
 GoRouter router(RouterRef ref) {
+  final provider = ref.read(authProvider);
+
   return GoRouter(
     initialLocation: '/splash',
     navigatorKey: _rootNavigatorKey,
+    refreshListenable: provider,
+    redirect: provider.redirectLogic,
     routes: [
       GoRoute(
         path: '/splash',

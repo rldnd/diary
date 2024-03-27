@@ -15,26 +15,18 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UserIdentityModel _$UserIdentityModelFromJson(Map<String, dynamic> json) {
-  return _UserItentityModel.fromJson(json);
+  return _UserIdentityModel.fromJson(json);
 }
 
 /// @nodoc
 mixin _$UserIdentityModel {
-  @override
   String get id => throw _privateConstructorUsedError;
-  @override
   String get userId => throw _privateConstructorUsedError;
-  @override
   Map<String, dynamic>? get identityData => throw _privateConstructorUsedError;
-  @override
   String get identityId => throw _privateConstructorUsedError;
-  @override
   String get provider => throw _privateConstructorUsedError;
-  @override
   String? get createdAt => throw _privateConstructorUsedError;
-  @override
   String? get lastSignInAt => throw _privateConstructorUsedError;
-  @override
   String? get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,14 +42,14 @@ abstract class $UserIdentityModelCopyWith<$Res> {
       _$UserIdentityModelCopyWithImpl<$Res, UserIdentityModel>;
   @useResult
   $Res call(
-      {@override String id,
-      @override String userId,
-      @override Map<String, dynamic>? identityData,
-      @override String identityId,
-      @override String provider,
-      @override String? createdAt,
-      @override String? lastSignInAt,
-      @override String? updatedAt});
+      {String id,
+      String userId,
+      Map<String, dynamic>? identityData,
+      String identityId,
+      String provider,
+      String? createdAt,
+      String? lastSignInAt,
+      String? updatedAt});
 }
 
 /// @nodoc
@@ -120,30 +112,30 @@ class _$UserIdentityModelCopyWithImpl<$Res, $Val extends UserIdentityModel>
 }
 
 /// @nodoc
-abstract class _$$UserItentityModelImplCopyWith<$Res>
+abstract class _$$UserIdentityModelImplCopyWith<$Res>
     implements $UserIdentityModelCopyWith<$Res> {
-  factory _$$UserItentityModelImplCopyWith(_$UserItentityModelImpl value,
-          $Res Function(_$UserItentityModelImpl) then) =
-      __$$UserItentityModelImplCopyWithImpl<$Res>;
+  factory _$$UserIdentityModelImplCopyWith(_$UserIdentityModelImpl value,
+          $Res Function(_$UserIdentityModelImpl) then) =
+      __$$UserIdentityModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@override String id,
-      @override String userId,
-      @override Map<String, dynamic>? identityData,
-      @override String identityId,
-      @override String provider,
-      @override String? createdAt,
-      @override String? lastSignInAt,
-      @override String? updatedAt});
+      {String id,
+      String userId,
+      Map<String, dynamic>? identityData,
+      String identityId,
+      String provider,
+      String? createdAt,
+      String? lastSignInAt,
+      String? updatedAt});
 }
 
 /// @nodoc
-class __$$UserItentityModelImplCopyWithImpl<$Res>
-    extends _$UserIdentityModelCopyWithImpl<$Res, _$UserItentityModelImpl>
-    implements _$$UserItentityModelImplCopyWith<$Res> {
-  __$$UserItentityModelImplCopyWithImpl(_$UserItentityModelImpl _value,
-      $Res Function(_$UserItentityModelImpl) _then)
+class __$$UserIdentityModelImplCopyWithImpl<$Res>
+    extends _$UserIdentityModelCopyWithImpl<$Res, _$UserIdentityModelImpl>
+    implements _$$UserIdentityModelImplCopyWith<$Res> {
+  __$$UserIdentityModelImplCopyWithImpl(_$UserIdentityModelImpl _value,
+      $Res Function(_$UserIdentityModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -158,7 +150,7 @@ class __$$UserItentityModelImplCopyWithImpl<$Res>
     Object? lastSignInAt = freezed,
     Object? updatedAt = freezed,
   }) {
-    return _then(_$UserItentityModelImpl(
+    return _then(_$UserIdentityModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -197,29 +189,26 @@ class __$$UserItentityModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UserItentityModelImpl implements _UserItentityModel {
-  const _$UserItentityModelImpl(
-      {@override required this.id,
-      @override required this.userId,
-      @override required final Map<String, dynamic>? identityData,
-      @override required this.identityId,
-      @override required this.provider,
-      @override required this.createdAt,
-      @override required this.lastSignInAt,
-      @override required this.updatedAt})
+class _$UserIdentityModelImpl implements _UserIdentityModel {
+  const _$UserIdentityModelImpl(
+      {required this.id,
+      required this.userId,
+      required final Map<String, dynamic>? identityData,
+      required this.identityId,
+      required this.provider,
+      required this.createdAt,
+      required this.lastSignInAt,
+      required this.updatedAt})
       : _identityData = identityData;
 
-  factory _$UserItentityModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserItentityModelImplFromJson(json);
+  factory _$UserIdentityModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserIdentityModelImplFromJson(json);
 
-  @override
   @override
   final String id;
   @override
-  @override
   final String userId;
   final Map<String, dynamic>? _identityData;
-  @override
   @override
   Map<String, dynamic>? get identityData {
     final value = _identityData;
@@ -230,18 +219,13 @@ class _$UserItentityModelImpl implements _UserItentityModel {
   }
 
   @override
-  @override
   final String identityId;
-  @override
   @override
   final String provider;
   @override
-  @override
   final String? createdAt;
   @override
-  @override
   final String? lastSignInAt;
-  @override
   @override
   final String? updatedAt;
 
@@ -254,7 +238,7 @@ class _$UserItentityModelImpl implements _UserItentityModel {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserItentityModelImpl &&
+            other is _$UserIdentityModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             const DeepCollectionEquality()
@@ -287,58 +271,50 @@ class _$UserItentityModelImpl implements _UserItentityModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserItentityModelImplCopyWith<_$UserItentityModelImpl> get copyWith =>
-      __$$UserItentityModelImplCopyWithImpl<_$UserItentityModelImpl>(
+  _$$UserIdentityModelImplCopyWith<_$UserIdentityModelImpl> get copyWith =>
+      __$$UserIdentityModelImplCopyWithImpl<_$UserIdentityModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UserItentityModelImplToJson(
+    return _$$UserIdentityModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _UserItentityModel implements UserIdentityModel {
-  const factory _UserItentityModel(
-      {@override required final String id,
-      @override required final String userId,
-      @override required final Map<String, dynamic>? identityData,
-      @override required final String identityId,
-      @override required final String provider,
-      @override required final String? createdAt,
-      @override required final String? lastSignInAt,
-      @override required final String? updatedAt}) = _$UserItentityModelImpl;
+abstract class _UserIdentityModel implements UserIdentityModel {
+  const factory _UserIdentityModel(
+      {required final String id,
+      required final String userId,
+      required final Map<String, dynamic>? identityData,
+      required final String identityId,
+      required final String provider,
+      required final String? createdAt,
+      required final String? lastSignInAt,
+      required final String? updatedAt}) = _$UserIdentityModelImpl;
 
-  factory _UserItentityModel.fromJson(Map<String, dynamic> json) =
-      _$UserItentityModelImpl.fromJson;
+  factory _UserIdentityModel.fromJson(Map<String, dynamic> json) =
+      _$UserIdentityModelImpl.fromJson;
 
-  @override
   @override
   String get id;
   @override
-  @override
   String get userId;
-  @override
   @override
   Map<String, dynamic>? get identityData;
   @override
-  @override
   String get identityId;
-  @override
   @override
   String get provider;
   @override
-  @override
   String? get createdAt;
   @override
-  @override
   String? get lastSignInAt;
-  @override
   @override
   String? get updatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$UserItentityModelImplCopyWith<_$UserItentityModelImpl> get copyWith =>
+  _$$UserIdentityModelImplCopyWith<_$UserIdentityModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

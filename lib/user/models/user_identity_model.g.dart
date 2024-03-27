@@ -6,9 +6,9 @@ part of 'user_identity_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserItentityModelImpl _$$UserItentityModelImplFromJson(
+_$UserIdentityModelImpl _$$UserIdentityModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$UserItentityModelImpl(
+    _$UserIdentityModelImpl(
       id: json['id'] as String,
       userId: json['userId'] as String,
       identityData: json['identityData'] as Map<String, dynamic>?,
@@ -19,8 +19,8 @@ _$UserItentityModelImpl _$$UserItentityModelImplFromJson(
       updatedAt: json['updatedAt'] as String?,
     );
 
-Map<String, dynamic> _$$UserItentityModelImplToJson(
-        _$UserItentityModelImpl instance) =>
+Map<String, dynamic> _$$UserIdentityModelImplToJson(
+        _$UserIdentityModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'userId': instance.userId,

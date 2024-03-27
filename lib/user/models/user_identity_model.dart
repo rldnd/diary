@@ -7,15 +7,15 @@ part 'user_identity_model.g.dart';
 @freezed
 class UserIdentityModel with _$UserIdentityModel {
   const factory UserIdentityModel({
-    @override required String id,
-    @override required String userId,
-    @override required Map<String, dynamic>? identityData,
-    @override required String identityId,
-    @override required String provider,
-    @override required String? createdAt,
-    @override required String? lastSignInAt,
-    @override required String? updatedAt,
-  }) = _UserItentityModel;
+    required String id,
+    required String userId,
+    required Map<String, dynamic>? identityData,
+    required String identityId,
+    required String provider,
+    required String? createdAt,
+    required String? lastSignInAt,
+    required String? updatedAt,
+  }) = _UserIdentityModel;
 
   factory UserIdentityModel.fromUserIdentity(UserIdentity userIdentity) {
     return UserIdentityModel(
