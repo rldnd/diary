@@ -16,7 +16,6 @@ class LoginScreen extends ConsumerStatefulWidget {
 
 class _LoginScreenState extends ConsumerState<LoginScreen> {
   Future<void> onTapKakaoLogin() async {
-    // TODO: deeplink
     await ref.read(supabaseProvider).auth.signInWithOAuth(
           OAuthProvider.kakao,
           authScreenLaunchMode: LaunchMode.externalApplication,
@@ -25,14 +24,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ref.watch(supabaseProvider).auth.onAuthStateChange.listen((data) {
-      final AuthChangeEvent event = data.event;
-      final Session? session = data.session;
-      if (event == AuthChangeEvent.signedIn) {
-        print('hi');
-      }
-    });
-
     return DefaultLayout(
       title: '로그인',
       body: SafeArea(
