@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
         asyncNavigationCallback: () async {
           await Future.delayed(const Duration(seconds: 3));
           if (!context.mounted) return;
-          context.go('/login');
+          context.go('/auth/login');
         },
         backgroundColor: Colors.white,
         splashScreenBody: Center(
