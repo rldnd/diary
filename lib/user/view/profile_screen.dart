@@ -1,5 +1,6 @@
 import 'package:diary/common/components/default_layout.dart';
 import 'package:diary/user/components/profile_section.dart';
+import 'package:diary/user/providers/user_me_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,13 +14,17 @@ class ProfileScreen extends ConsumerStatefulWidget {
 class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return const DefaultLayout(
+    return DefaultLayout(
       title: '프로필',
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            ProfileSection(),
+            const ProfileSection(),
+            ElevatedButton(
+              child: const Text('logout'),
+              onPressed: () => ref.read(userMeProvider.notifier).logout(),
+            ),
           ],
         ),
       ),

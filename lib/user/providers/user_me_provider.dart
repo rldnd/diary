@@ -21,4 +21,9 @@ class UserMe extends _$UserMe {
     state = UserModel.fromUser(user);
     return UserModel.fromUser(user);
   }
+
+  Future<void> logout() async {
+    await ref.read(supabaseProvider).auth.signOut();
+    state = UserModel.error();
+  }
 }

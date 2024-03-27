@@ -24,7 +24,7 @@ class _AuthProvider extends ChangeNotifier {
     BuildContext context,
     GoRouterState state,
   ) async {
-    final me = ref.watch(userMeProvider);
+    final me = ref.read(userMeProvider);
 
     final isSplash = state.fullPath?.startsWith('/splash') ?? false;
     final isLoggingIn = state.fullPath?.startsWith('/auth/login') ?? false;
