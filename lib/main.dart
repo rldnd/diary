@@ -17,7 +17,7 @@ Future<void> main() async {
   // NOTE: intl
   findSystemLocale().then((locale) {
     Intl.systemLocale = locale;
-    Jiffy.setLocale(locale);
+    Jiffy.setLocale('ko');
   });
 
   await initializeDateFormatting();

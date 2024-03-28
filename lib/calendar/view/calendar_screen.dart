@@ -1,8 +1,8 @@
 import 'package:diary/calendar/providers/calendar_provider.dart';
 import 'package:diary/common/components/default_layout.dart';
-import 'package:diary/common/utils/time_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:jiffy/jiffy.dart';
 
 class CalendarScreen extends ConsumerStatefulWidget {
   const CalendarScreen({super.key});
@@ -15,23 +15,17 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
     final calendar = ref.watch(calendarProvider);
+    final todayYear = Jiffy.now().year;
+    final titleYear =
+        todayYear == Jiffy.parseFromDateTime(calendar.focusedDate).year
+            ? ''
+            : '${calendar.focusedDate.year}년 ';
 
     return DefaultLayout(
-      title: TimeUtils.parseDateTimeToMonthWithOptionalYear(
-        calendar.focusedDate,
-      ),
-      body: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Next Month'),
-          ),
-          Text(calendar.focusedDate.toString()),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Previous Month'),
-          ),
-        ],
+      title: '$titleYear${Jiffy.parseFromDateTime(calendar.focusedDate).MMM}',
+      body: PageView.builder(
+        itemCount: 12,
+        itemBuilder: (context, index) {},
       ),
     );
   }

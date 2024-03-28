@@ -1,6 +1,6 @@
 import 'package:diary/calendar/models/calendar_model.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:jiffy/jiffy.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'calendar_provider.g.dart';
 
@@ -11,15 +11,20 @@ class Calendar extends _$Calendar {
     return CalendarModel();
   }
 
-  void addSelectedDate(Duration duration) {
-    final selectedDate = state.selectedDate;
-    final newSelectedDate = selectedDate.add(duration);
-    state = state.copyWith(selectedDate: selectedDate);
+  void addFocusedDateMonth(int months) {
+    final focusedDate = state.focusedDate;
+    state = state.copyWith(
+      focusedDate:
+          Jiffy.parseFromDateTime(focusedDate).add(months: months).dateTime,
+    );
   }
 
-  void subtractSelectedDate(Duration duration) {
-    final selectedDate = state.selectedDate;
-    selectedDate.subtract(duration);
-    state = state.copyWith(selectedDate: selectedDate);
+  void subtractFocusedDate(int months) {
+    final focusedDate = state.focusedDate;
+    state = state.copyWith(
+      focusedDate: Jiffy.parseFromDateTime(focusedDate)
+          .subtract(months: months)
+          .dateTime,
+    );
   }
 }
