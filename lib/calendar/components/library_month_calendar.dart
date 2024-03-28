@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-class MonthCalendar extends StatefulWidget {
+class LibraryMonthCalendar extends StatefulWidget {
   final double width;
   final double height;
 
-  const MonthCalendar({
+  const LibraryMonthCalendar({
     super.key,
     required this.width,
     required this.height,
   });
 
   @override
-  State<MonthCalendar> createState() => _MonthCalendarState();
+  State<LibraryMonthCalendar> createState() => _LibraryMonthCalendarState();
 }
 
-class _MonthCalendarState extends State<MonthCalendar> {
+class _LibraryMonthCalendarState extends State<LibraryMonthCalendar> {
   CalendarFormat format = CalendarFormat.month;
 
   @override
