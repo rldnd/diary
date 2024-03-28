@@ -11,6 +11,10 @@ class Calendar extends _$Calendar {
     return CalendarModel();
   }
 
+  void setFocusedDateMonth(DateTime dateTime) {
+    state = state.copyWith(focusedDate: dateTime);
+  }
+
   void addFocusedDateMonth(int months) {
     final focusedDate = state.focusedDate;
     state = state.copyWith(
