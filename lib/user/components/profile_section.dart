@@ -13,8 +13,6 @@ class ProfileSection extends ConsumerWidget {
           error: (value) => null,
         );
 
-    print(user);
-
     return InkWell(
       onTap: () {},
       child: Padding(

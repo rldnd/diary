@@ -6,11 +6,11 @@ part of 'user_me_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userMeHash() => r'e7a9374c7b56084fd6a564af581578ec3d45ae72';
+String _$userMeHash() => r'c0f0c5fc5d1b49fb7ae2485257b0bb34c97d33f1';
 
 /// See also [UserMe].
 @ProviderFor(UserMe)
-final userMeProvider = NotifierProvider<UserMe, UserModel>.internal(
+final userMeProvider = NotifierProvider<UserMe, UserMeModel>.internal(
   UserMe.new,
   name: r'userMeProvider',
   debugGetCreateSourceHash:
@@ -19,6 +19,6 @@ final userMeProvider = NotifierProvider<UserMe, UserModel>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef _$UserMe = Notifier<UserModel>;
+typedef _$UserMe = Notifier<UserMeModel>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

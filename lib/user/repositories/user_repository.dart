@@ -1,4 +1,5 @@
 import 'package:diary/common/providers/supabase_provider.dart';
+import 'package:diary/user/models/user_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -14,7 +15,15 @@ class UserRepository {
 
   const UserRepository({required this.ref});
 
-  Future<dynamic> getUsers() async {
-    return ref.read(supabaseProvider).from('User').select();
+  Future<List<UserModel>> getUsers() async {
+    final users = await ref
+        .read(supabaseProvider)
+        .from('profile')
+        .select()
+        .withConverter<List<UserModel>>(
+          (data) => data.map(UserModel.fromJson).toList(),
+        );
+
+    return users;
   }
 }
