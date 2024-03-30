@@ -75,6 +75,7 @@ class _InfinitePageViewState extends State<InfinitePageView> {
       controller: _pageController,
       physics: const CustomPageViewScrollPhysics(),
       itemCount: pageDiff.length,
+      allowImplicitScrolling: true,
       itemBuilder: (context, index) {
         return widget.builder(context, pageDiff[index]);
       },

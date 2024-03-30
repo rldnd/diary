@@ -4,12 +4,14 @@ class DefaultLayout extends StatelessWidget {
   final String? title;
   final Widget body;
   final Widget? bottomNavigation;
+  final Widget? floatingActionButton;
 
   const DefaultLayout({
     super.key,
     this.title,
     required this.body,
     this.bottomNavigation,
+    this.floatingActionButton,
   });
 
   @override
@@ -23,6 +25,7 @@ class DefaultLayout extends StatelessWidget {
           : null,
       body: body,
       bottomNavigationBar: bottomNavigation,
+      floatingActionButton: floatingActionButton,
     );
   }
 }

@@ -11,10 +11,20 @@ class TodayScreen extends StatefulWidget {
 class _TodayScreenState extends State<TodayScreen> {
   @override
   Widget build(BuildContext context) {
-    return const DefaultLayout(
+    return DefaultLayout(
       title: '오늘',
       body: Center(
         child: Text(''),
+      ),
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50.0),
+        ),
+        elevation: 2.0,
+        backgroundColor: Colors.blue[200],
+        foregroundColor: Colors.blue[800],
+        child: const Icon(Icons.add, size: 28.0),
+        onPressed: () {},
       ),
     );
   }
