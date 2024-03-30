@@ -1,4 +1,4 @@
-import 'package:diary/common/components/default_layout.dart';
+import 'package:diary/common/components/layout/default_layout.dart';
 import 'package:diary/user/components/profile_section.dart';
 import 'package:diary/user/providers/user_me_provider.dart';
 import 'package:flutter/material.dart';

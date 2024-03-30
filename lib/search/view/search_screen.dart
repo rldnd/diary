@@ -1,4 +1,4 @@
-import 'package:diary/common/components/default_layout.dart';
+import 'package:diary/common/components/layout/default_layout.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatefulWidget {

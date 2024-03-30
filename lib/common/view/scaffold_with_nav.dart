@@ -1,4 +1,4 @@
-import 'package:diary/common/components/default_layout.dart';
+import 'package:diary/common/components/layout/default_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
